@@ -1,3 +1,2 @@
 http://example.com/2023/02/13/Redis/
 http://example.com/
-http://example.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/

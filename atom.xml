@@ -41,9 +41,9 @@
     <link href="http://example.com/2022/03/15/%E5%BC%80%E5%8F%91%E7%BB%8F%E5%8E%86/"/>
     <id>http://example.com/2022/03/15/%E5%BC%80%E5%8F%91%E7%BB%8F%E5%8E%86/</id>
     <published>2022-03-15T14:19:47.000Z</published>
-    <updated>2023-02-15T14:37:43.305Z</updated>
+    <updated>2023-02-16T03:36:45.398Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="1、request请求的使用"><a href="#1、request请求的使用" class="headerlink" title="1、request请求的使用"></a>1、request请求的使用</h1><p>当时在想需要获取请求头之类的信息，需要用到request.getHeader()等方法，那是不是都要在Controller层传入这个参数，然后发现我们的Controller层继承一个自己封装的BaseController，BaseController里面实例化了这个变量，所以可以直接使用，不用在方法体中传参了。</p><h1 id="2、日志管理的实现"><a href="#2、日志管理的实现" class="headerlink" title="2、日志管理的实现"></a>2、日志管理的实现</h1><p>当时借鉴ruoyi框架的日志管理，用AOP的思想在登录验证中开启一个异步任务管理器，异步任务管理器开启一个线程来执行插入日志表的操作。就是不管是登录成功还是登录失败，都开启一个新线程用于执行插入日志的操作，来实现登录日志的写入。但是因为有SpringSercurity框架，导致新开的线程没法通过权限认证，登录直接报错没有权限。推测错误是SpringSercurity框架下多线程操作导致线程上下文的丢失，只要把主线程的信息注入到新线程就好了，但是不知道怎么实现。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="1、request请求的使用"><a href="#1、request请求的使用" class="headerlink" title="1、request请求的使用"></a>1、request请求的使用</h1><p>当时在想需要获取请求头之类的信息，需要用到request.getHeader()等方法，那是不是都要在Controller层传入这个参数，然后发现我们的Controller层继承一个自己封装的BaseController，BaseController里面实例化了这个变量，所以可以直接使用，不用在方法体中传参了。</p><h1 id="2、日志管理的实现"><a href="#2、日志管理的实现" class="headerlink" title="2、日志管理的实现"></a>2、日志管理的实现</h1><p>当时借鉴ruoyi框架的日志管理，用AOP的思想在登录验证中开启一个异步任务管理器，异步任务管理器开启一个线程来执行插入日志表的操作。就是不管是登录成功还是登录失败，都开启一个新线程用于执行插入日志的操作，来实现登录日志的写入。但是因为有SpringSercurity框架，导致新开的线程没法通过权限认证，登录直接报错没有权限。推测错误是SpringSercurity框架下多线程操作导致线程上下文的丢失，只要把主线程的信息注入到新线程就好了，但是不知道怎么实现。</p><p>3、时间范围处理：</p><p>前端只传到年月日这个精度，但是插入数据库的时间字段要精确到时分秒。处理方式：</p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230216113637661.png" alt="image-20230216113637661"></p>]]></content>
     
     
       

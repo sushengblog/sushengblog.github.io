@@ -4,7 +4,7 @@
   <url>
     <loc>http://example.com/2022/05/13/Redis/</loc>
     
-    <lastmod>2023-02-22</lastmod>
+    <lastmod>2023-02-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +31,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2023-02-22</lastmod>
+    <lastmod>2023-02-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
